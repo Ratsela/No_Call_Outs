@@ -1,0 +1,50 @@
+<html layout:decorator="layout">
+	<div layout:fragment="content">
+		<h3>Service Providers</h3>
+		<form  action="/spListForm" method="get">
+			<div class="table-responsive ">
+				<table class="table table-hover table-bordered table-striped">
+					<thead>
+						<tr>
+							<th >Profile Picture</th>
+							<th >First Name</th>
+							<th >Last Name</th>
+							<th >Email</th>
+							<th >Contact</th>
+							<th >Address</th>
+							<th >Services</th>
+							<th >Service(s) description</th>
+							<th >Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="p in providers">
+							<td><img ng-src="data:image/JPG;base64,{{p.profile}}" style="width: 40px ;height: 40px" class="img-circle"/></td>
+							<td>{{p.name}}</td>
+							<td>{{p.surname}}</td>
+							<td>{{p.email}}</td>
+							<td>{{p.contact}}</td>
+							<td>{{p.address}}</td>
+							<td>{{p.services}}</td>
+							<td>{{p.ser_desc}}</td>
+							<td><a href="/spListForm?spemail={{p.email}}">Request Service</a></td>
+							<!-- <td><button class="btn btn-sm btn-primary btn-block" type="submit">Request Service</button></td>-->
+						</tr>
+						</tbody>
+					<!-- <tbody>
+						<tr data-th-each="sp : ${serviceProviders}">
+							<td><img src="data:image/JPG;base64,{{sp.profile_pic}}"/></td>
+							<td data-th-text="${sp.fname}"></td>
+							<td data-th-text="${sp.lname}"></td>
+							<td data-th-text="${sp.email}"></td>
+							<td data-th-text="${sp.contact}"></td>
+							<td data-th-text="${sp.address}"></td>
+							<td data-th-text="${sp.services}"></td>
+							<td data-th-text="${sp.service_description}"></td>
+						</tr>
+					</tbody>-->
+				</table>
+			</div>
+		 </form>
+	</div>
+</html>

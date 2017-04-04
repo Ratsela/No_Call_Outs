@@ -1,0 +1,33 @@
+<html layout:decorator="layout">
+	<div layout:fragment="content">
+		<h3>Service Requests</h3>
+		<form  action="/respondProblems" method="get">
+			<div class="table-responsive ">
+				<table class="table table-hover table-bordered table-striped">
+					<thead>
+						<tr>
+							<th >Customer Name</th>
+							<th >Email</th>
+							<th >Contact</th>
+							<th >Address</th>
+							<td >Description</td>
+							<th >Problem Picture</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="p in problems">
+							<td>{{p.name}}</td>
+							<td>{{p.email}}</td>
+							<td>{{p.contact}}</td>
+							<td>{{p.address}}</td>
+							<td>{{p.description}}</td>
+							<td><img id="myImg" ng-src="data:image/JPG;base64,{{p.image}}" style="width: 40px ;height: 40px" /></td>
+							<td><a href="/respondProblems?custemail={{p.email}}">Respond</a></td>
+							<!-- <td><button class="btn btn-sm btn-primary btn-block" type="submit">Request Service</button></td>-->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		 </form>
+	</div>
+</html>

@@ -1,0 +1,13 @@
+<html layout:decorator="layout">
+	<div layout:fragment="content">
+		<form action="/problemForm" method="post" enctype="multipart/form-data">
+		
+			<label for="problemtxt" class="sr-only">Problem Description</label>
+			<textarea rows="4" cols="40" maxlength="2000" name="problemtxt" class="problemtxt" placeholder="Describe you problem here." style="width:100%" required="required"></textarea><br></br>
+			<label for="imagefile" class="sr-only">Upload Optional Image</label>
+			<input type="file" name="imagefile"/>
+			<br></br>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
+		</form>
+	</div>
+</html>
